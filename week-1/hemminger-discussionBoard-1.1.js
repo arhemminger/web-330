@@ -1,11 +1,23 @@
-function Employee (first, last, title) {
+/*
+============================================
+; Title:  Classes
+; Author: Andrew Hemminger
+; Date:   20 February 2019
+; Description: Discussion Board 1.1 - Classes
+;===========================================
+*/
 
-  // property and method definitions
-
+// constructor function with three fields
+function employee (first, last, title) {
+  this.first = first,
+  this.last = last,
+  this.title = title
 }
 
-var employee1 = new Employee('Nikola', 'Tesla', 'Developer');
+// adds a property to the employee function
+employee.prototype.company = 'Bellevue'
 
-//Employee.prototype.record = this.first + ' ' + this.last + ':' + this.title;
+// creates a new object which prototype is employee
+var ben = new employee ('Ben', 'Franklin', 'Developer')
 
-//console.log (Employee.record('Ben', 'Franklin', 'QA Analyst'));
+console.log(ben.company); // => 'Bellevue'
