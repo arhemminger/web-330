@@ -1,5 +1,5 @@
 # web-330
-Enterprise JavaScript II
+Enterprise JavaScript II code.
 
 # contributors
 Professor Krasso - Bellevue University
