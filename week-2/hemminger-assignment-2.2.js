@@ -40,5 +40,4 @@ andrew.getAge();
 console.log("The person's full name is '%s'.", andrew.fullname);
 console.log("The person's age is '%s'.", andrew.age);
 
-
 // end program
