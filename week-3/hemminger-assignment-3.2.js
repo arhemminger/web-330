@@ -4,11 +4,11 @@
 ; Author: Professor Krasso
 ; Date:  10 March 2019
 ; Modified by: Andrew Hemminger
-; Description: Exercise 3.2 – Prototypes
+; Description: Exercise 3.2 – The Factory Pattern
 ;===========================================
 */
 var header = require('../hemminger-header.js');
-console.log(header.display('Andrew', 'Hemminger', 'Exercise 2.2'));
+console.log(header.display('Andrew', 'Hemminger', 'Exercise 3.2'));
 console.log("");
 
 // start program
