@@ -1,0 +1,45 @@
+<!--
+============================================
+; Title:  HTTP PUT and DELETE Operations
+; Author: Professor Krasso
+; Date:  15 March 2019
+; Modified by: Andrew Hemminger
+; Description: Exercise 4.3 – HTTP PUT and DELETE Operations
+;===========================================
+-->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Exercise 4.3 – HTTP PUT and DELETE Operations</title>
+
+    <!-- jQuery reference -->
+    <script
+      type="text/javascript"
+      src="https://gc.kis.v2.scr.kaspersky-labs.com/5DACB2B0-5003-6543-8B39-D8EE6E4FC44C/main.js"
+      charset="UTF-8"
+    ></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  </head>
+  <body>
+    <div>
+      <h4>HTTP DELETE request</h4>
+      <button id="delete1">Delete User</button>
+    </div>
+    <script>
+      $(function() {
+        $("#delete1").click(function() {
+          $.ajax({
+            url: 'http://httpbin.org/delete',
+            dataType: 'json',
+            type: 'DELETE',
+            data: { username: 'admin', password: 'secret', email: 'test@mail.com'},
+            success: function(data, status) {
+              console.log('Username: ' + data.form.username + '\nPassword: ' + data.form.password + '\nEmail: ' + data.form.email + '\nStatus: ' + status);
+            }
+          })
+        })
+      });
+    </script>
+  </body>
+</html>
