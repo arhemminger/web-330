@@ -24,9 +24,11 @@
   <body>
     <div>
       <h4>HTTP DELETE request</h4>
+      <!--button created to trigger httpbin.org API DELETE method-->
       <button id="delete1">Delete User</button>
     </div>
     <script>
+      // function that sends a DELETE request to remove secured user using httpbin.org API
       $(function() {
         $("#delete1").click(function() {
           $.ajax({
@@ -35,6 +37,7 @@
             type: 'DELETE',
             data: { username: 'admin', password: 'secret', email: 'test@mail.com'},
             success: function(data, status) {
+              // log returned data to the console.
               console.log('Username: ' + data.form.username + '\nPassword: ' + data.form.password + '\nEmail: ' + data.form.email + '\nStatus: ' + status);
             }
           })
