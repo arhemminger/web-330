@@ -1,0 +1,68 @@
+<!--
+============================================
+; Title:  The Proxy Pattern
+; Author: Professor Krasso
+; Date:  23 March 2019
+; Modified by: Andrew Hemminger
+; Description: Exercise 5.2 – The Proxy Pattern
+;===========================================
+-->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Exercise 5.2 - The Proxy Pattern</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <!-- jquery Reference Library -->
+    <script
+      type="text/javascript"
+      src="https://gc.kis.v2.scr.kaspersky-labs.com/5DACB2B0-5003-6543-8B39-D8EE6E4FC44C/main.js"
+      charset="UTF-8"
+    ></script>
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+  </head>
+  <body>
+      <nav class="navbar navbar-dark bg-dark">
+        <a href="#" class="navbar-brand">Home</a>
+      </nav>
+      <br><br>
+      <div class="container">
+          <div class="row">
+            <div class="col-md-12">
+              <h2>Assignment 5.2 - The Proxy Pattern</h2>
+
+              <button class="btn btn-primary" id="btn1">Preview Proxy</button>
+
+              <br>
+              <hr/>
+              <!--span created as placeholder for on click generated content-->
+              <span id="proxy1"></span>
+              <hr/>
+            </div>
+          </div>
+      </div>
+
+  <script>
+      $(function() {
+
+          var employee = {
+              employeeId: "1804",
+              firstName: "Steve",
+              lastName: "Rodgers",
+              title: "CTO",
+              display: function() {
+                // Clearing the span tag before appending new values
+                $("#proxy1").html("");
+                // Writing our proxy results to the span tag
+                $("#proxy1").append("<br>Employee ID: " + this.employeeId + "<br>Name: " + this.firstName + " " + this.lastName + "<br>Title: " + this.title);
+              }
+
+          };
+          // On button click display employee information
+          $("#btn1").click($.proxy(employee, "display"));
+      });
+  </script>
+  </body>
+</html>
