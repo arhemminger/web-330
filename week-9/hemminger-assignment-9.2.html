@@ -33,6 +33,7 @@
   </head>
 
   <body>
+      <!-- Navigation bar -->
       <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
           <ul class="navbar-nav">
             <li class="nav-item active">
@@ -53,6 +54,7 @@
           <h1>Hello MVC Example 2</h1>
           <p class="lead">Models and Collections...</p>
 
+          <!-- Employee table -->
           <div class="row">
             <div class="col-sm-9">
               <table class="table table-dark table-striped table-hover">
@@ -70,6 +72,7 @@
         </div>
 
         <script>
+          // function with three parameter values (id, name, salary)
           function Employee(id, name, salary) {
             this.id = id;
             this.name = name;
@@ -89,12 +92,14 @@
             model: EmployeeModel
           });
 
+          // new employee objects
           var Employees = new EmployeeCollection();
           Employees.add(new Employee("001", "Tony Stark", "300M"));
           Employees.add(new Employee("002", "Steve Rogers", "2M"));
           Employees.add(new Employee("003", "Clint Barton", "20K"));
           Employees.add(new Employee("004", "Nick Fury", "50K"));
 
+          // appending new employees to the HTML table
           Employees.each(function(employee) {
             $("#table-body").append(
               "<tr>" +
